@@ -10,11 +10,11 @@ namespace Library.Service
     public class ResultService
     {
         public BmiResult? RecentOverweightResult { get; private set; }
-        private readonly ResultRepository _resultRepository;
+        private readonly IResultRepository _resultRepository;
 
-        public ResultService()
+        public ResultService(IResultRepository resultRepository)
         {
-            _resultRepository = new ResultRepository();
+            _resultRepository = resultRepository;
         }
 
         public void SecRecentOverweightResult(BmiResult result)

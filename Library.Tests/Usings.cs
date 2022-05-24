@@ -5,3 +5,5 @@ global using System.Collections.Generic;
 global using System.Linq;
 global using System.Threading.Tasks;
 global using Library.Model;
+global using Moq;
+global using FluentAssertions;
