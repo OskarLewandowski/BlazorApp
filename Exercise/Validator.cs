@@ -34,8 +34,8 @@ namespace Exercise
                 .FirstOrDefault(dr => dr.From.Date <= input.To.Date && dr.From.Date >= input.From.Date
                  && dr.To.Date <= input.To.Date && dr.To.Date >= input.From.Date);
 
-            
-            if(innerOverlappingDateRange != null) return false;
+
+            if (innerOverlappingDateRange != null) return false;
 
             return true;
         }
