@@ -1,15 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Moq;
+using Xunit.Abstractions;
 
 namespace Library.Tests
 {
     public class BmiCalculatorFacadeTests
     {
+
+        public BmiCalculatorFacadeTests(ITestOutputHelper testOutputHelper)
+        {
+            _outputHelper = testOutputHelper;
+        }
+
+        private readonly ITestOutputHelper _outputHelper;
+
         private const string OBESITY_SUMARRY = "You should take care of your obesity";
         private const string NORMAL_SUMARRY = "Your weight is normal, keep it up";
         private const string OVERWEIGHT_SUMARRY = "You are a bit overweight";
@@ -34,6 +44,11 @@ namespace Library.Tests
             //act
 
             BmiResult result = bmiCalculatorFacade.GetResult(1, 1);
+
+
+            //Console.WriteLine($"For classification: {classification} the result is: {result.Summary}");
+            //Debug.WriteLine($"For classification: {classification} the result is: {result.Summary}");
+            _outputHelper.WriteLine($"For classification: {classification} the result is: {result.Summary}");
 
             //assert
             //FluentAssertions
