@@ -30,9 +30,10 @@ namespace Library.Tests
 
         }
 
+        //[ClassData(typeof(MetricBmiCalculatorTestsData))]
 
         [Theory]
-        [ClassData(typeof(MetricBmiCalculatorTestsData))]
+        [JsonFileData("Data/MetricBmiCalculatorData.json")]
         public void CalculateBmi_ForInvalidArguments_ThrowsArgumentsException(double weight, double height)
         {
             //arrange
