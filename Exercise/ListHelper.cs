@@ -14,9 +14,9 @@ namespace Exercise
 
             for (int i = 0; i < listOfNumbers.Count; i++)
             {
-                if (listOfNumbers[i] % 2 == 0)
+                if (listOfNumbers[i] % 2 != 0)
                 {
-                    listOfNumbers.RemoveAt(i);
+                    result.Add(listOfNumbers[i]);
                 }
             }
             return result;
