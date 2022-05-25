@@ -32,12 +32,7 @@ namespace Library.Tests
 
 
         [Theory]
-        [InlineData(0, 190)]
-        [InlineData(-5, 150)]
-        [InlineData(-11, 150)]
-        [InlineData(90, -150)]
-        [InlineData(90, 0)]
-        [InlineData(0, 0)]
+        [ClassData(typeof(MetricBmiCalculatorTestsData))]
         public void CalculateBmi_ForInvalidArguments_ThrowsArgumentsException(double weight, double height)
         {
             //arrange
